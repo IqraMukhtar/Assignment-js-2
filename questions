@@ -68,5 +68,97 @@ document.getElementById("p1").innerHTML = "New text!";
    
    
  //question No 5
- 
+ function set_background() {
+ docBody = document.getElementsByTagName("body")[0];
+  //Get all the p elements that are descendants of the body
+  myBodyElements = docBody.getElementsByTagName("p");
+// get the first p elements
+  myp1 = myBodyElements[0];
+  myp1.style.background = "rgb(255,0,0)";
+// get the second p elements
+  myp2 = myBodyElements[1];
+  myp2.style.background = "rgb(255,255,0)";
+}
+
+
+//question No 6
+  <div id="formDiv">
+        <form id="carForm">
+            <h1>Local Storage</h1>
+            <label for="carBrand" >Car</label>
+            <input type="text" id="carBrand" placeholder="Car brand" required autofocus><br>
+            <label for="carPrice" >Price</label>
+            <input type="text" id="carPrice" placeholder="Price" required><br>
+            <label for="key" >Key</label>
+            <input type="text" id="key" placeholder="Key" required><br>
+            <button type="submit">Store Records</button>
+        </form>
+        <br>
+        <label for="retrieveKey" >Enter Key to retrieve item</label>
+        <input type="text" id="retrieveKey" placeholder="retrieveKey" required><br>
+        <button id="retrieveButton">Retrieve records</button>
+        <br>
+        <div id="retrieve"></div>
+        <br>
+        <label for="removeKey" >Enter Key to delete item</label>
+        <input type="text" id="removeKey" placeholder="removeKey" required><br>
+        <button id="removeButton">Remove record</button>
+        <br>
+        <button id="clearButton">Clear all records</button>
+  </div>
+function store(){ //stores items in the localStorage
+    var brand = document.getElementById('carBrand').value;
+    var price = document.getElementById('carPrice').value;
+    var key = document.getElementById('key').value; //gets the key from the user
+
+    const car = {
+        brand: brand,
+        price: price,
+    }
+
+    window.localStorage.setItem(key,JSON.stringify(car));  
+    //converting object to string
+}
+  
+  
+ //question No 7
+   <div id="formDiv">
+        <form id="carForm">
+            <h1>Local Storage</h1>
+            <label for="carBrand" >Car</label>
+            <input type="text" id="carBrand" placeholder="Car brand" required autofocus><br>
+            <label for="carPrice" >Price</label>
+            <input type="text" id="carPrice" placeholder="Price" required><br>
+            <label for="key" >Key</label>
+            <input type="text" id="key" placeholder="Key" required><br>
+            <button type="submit">Store Records</button>
+        </form>
+        <br>
+        <label for="retrieveKey" >Enter Key to retrieve item</label>
+        <input type="text" id="retrieveKey" placeholder="retrieveKey" required><br>
+        <button id="retrieveButton">Retrieve records</button>
+        <br>
+        <div id="retrieve"></div>
+        <br>
+        <label for="removeKey" >Enter Key to delete item</label>
+        <input type="text" id="removeKey" placeholder="removeKey" required><br>
+        <button id="removeButton">Remove record</button>
+        <br>
+        <button id="clearButton">Clear all records</button>
+  </div>
+ function retrieveRecords(){ //retrieves items in the localStorage
+    console.log("retrieve records");
+     var key = document.getElementById('retrieveKey').value;
+    var records = window.localStorage.getItem(key);
+    var paragraph = document.createElement("p");
+    var infor = document.createTextNode(records);
+    paragraph.appendChild(infor);
+    var element = document.getElementById("retrieve");
+    element.appendChild(paragraph);
+}
+
+//question No 8
+
+
+
  
