@@ -1,0 +1,72 @@
+// question No 1
+
+function counter() {
+    var count = 0;
+    return function() {
+        alert(count++);
+    }
+}
+var count = counter();
+count();
+count();
+count();
+
+
+// question No 2
+
+function aFunc() {
+   var promise = { hasRun: false, result: null };
+   object.event = function() {
+      result.hasRun = true;
+      result.result = true; // or something else...
+   };
+   return promise;
+}
+
+// check if it has run and get the result:
+
+if (promise.hasRun) {
+  // access promise.result
+}
+
+
+// question No 3
+
+<html>
+<body>
+
+<h2>JavaScript can Change HTML</h2>
+
+<p id="p1">Hello World!</p>
+
+<script>
+document.getElementById("p1").innerHTML = "New text!";
+</script>
+
+<p>The paragraph above was changed by a script.</p>
+
+</body>
+</html>
+
+
+
+//question No 4
+
+<h3>HTML list using JavaScript forEach()</h3>
+   <ul id="UnList"></ul>
+   <script>
+      let data = ["item1", "item2", "item3", "item4"];
+      let list = document.getElementById("UnList");
+      var fragList = document.createDocumentFragment();
+      data.forEach(function (item) {
+         var li = document.createElement('li');
+         li.textContent = item;
+         fragList.appendChild(li);
+      });
+      list.appendChild(fragList);
+   </script>
+   
+   
+ //question No 5
+ 
+ 
